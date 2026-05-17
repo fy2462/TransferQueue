@@ -1,5 +1,5 @@
-# Copyright 2025 Huawei Technologies Co., Ltd. All Rights Reserved.
-# Copyright 2025 The TransferQueue Team
+# Copyright 2026 Huawei Technologies Co., Ltd. All Rights Reserved.
+# Copyright 2026 The TransferQueue Team
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,23 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .backends import SimpleStorageUnit, StorageUnitData
-from .managers import (
-    AsyncSimpleStorageManager,
-    MooncakeStorageManager,
-    RayStorageManager,
-    StorageManager,
-    StorageManagerFactory,
-    YuanrongStorageManager,
-)
+from . import mooncake_storage, simple_storage, yuanrong_storage  # noqa: F401, I001
+from .base import StorageBackendFactory
+from .simple_storage import SimpleStorageUnit, StorageUnitData
 
 __all__ = [
+    "StorageBackendFactory",
     "SimpleStorageUnit",
     "StorageUnitData",
-    "StorageManager",
-    "StorageManagerFactory",
-    "AsyncSimpleStorageManager",
-    "MooncakeStorageManager",
-    "YuanrongStorageManager",
-    "RayStorageManager",
 ]
